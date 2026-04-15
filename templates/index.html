@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Predictor</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            margin: 30px auto;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        input, select {
+            width: 90%;
+            padding: 8px;
+            margin: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>🎓 Student Performance Prediction</h2>
+
+<form action="/predict" method="post">
+
+    <input type="number" name="Student_Age" placeholder="Age" required>
+
+    <select name="Sex">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+
+    <select name="High_School_Type">
+        <option value="">High School Type</option>
+        <option value="Private">Private</option>
+        <option value="State">State</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <input type="number" name="Scholarship" placeholder="Scholarship %" required>
+
+    <select name="Additional_Work">
+        <option value="">Additional Work</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+
+    <select name="Sports_activity">
+        <option value="">Sports Activity</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+
+    <select name="Transportation">
+        <option value="">Transportation</option>
+        <option value="Bus">Bus</option>
+        <option value="Private">Private</option>
+    </select>
+
+    <input type="number" name="Weekly_Study_Hours" placeholder="Study Hours per Week" required>
+
+    <select name="Attendance">
+        <option value="">Attendance</option>
+        <option value="Always">Always</option>
+        <option value="Sometimes">Sometimes</option>
+        <option value="Never">Never</option>
+    </select>
+
+    <select name="Reading">
+        <option value="">Reading</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+
+    <select name="Notes">
+        <option value="">Taking Notes</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+
+    <select name="Listening_in_Class">
+        <option value="">Listening in Class</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+
+    <select name="Project_work">
+        <option value="">Project Work</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+
+    <br><br>
+    <button type="submit">Predict</button>
+
+</form>
+
+<h3>{{ prediction_text }}</h3>
+
+</body>
+</html>
